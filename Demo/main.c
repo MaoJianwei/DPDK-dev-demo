@@ -12,4 +12,5 @@ main(int argc, char ** argv) {
         rte_exit(EXIT_FAILURE, "Mao - RTE init fail, return: %d", ret);
     }
 
+    return ret;
 }

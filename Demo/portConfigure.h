@@ -1,7 +1,9 @@
-#include <rte_ethdev.h>
 
 #ifndef DPDK_STABLE_17_11_1_PORTCONFIGURE_H
 #define DPDK_STABLE_17_11_1_PORTCONFIGURE_H
+
+#include <rte_ethdev.h>
+
 
 struct rte_eth_conf portConfigure = {
         .rxmode = {

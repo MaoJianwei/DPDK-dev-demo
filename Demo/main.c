@@ -37,7 +37,6 @@ process_packet(struct rte_mbuf * pkt) {
 static int
 process_loop(void * notUse) {
 
-uint32_t
     unsigned myLcoreId = rte_lcore_id();
     if (0 == portLcoreBinding[myLcoreId].count) {
         RTE_LOG(INFO, Mao, "nothing to do and released, lcore: %d, socketId: %d\n", rte_lcore_id(), rte_socket_id());
@@ -47,7 +46,6 @@ uint32_t
         RTE_LOG(INFO, Mao, "hello, this is lcore: %d, socketId: %d, portCount: %d\n",
                 rte_lcore_id(), rte_socket_id(), portLcoreBinding[myLcoreId].count);
     }
-rte_zmalloc()
 
     struct rte_mbuf * rxBuffer[Mao_MAX_RX_BURST];
 

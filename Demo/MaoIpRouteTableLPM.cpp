@@ -19,7 +19,7 @@ ip_tunnel_mapping_create() {
 void
 ip_tunnel_mapping_add(struct MaoRouteNode * maoTunnelTable,
                       uint32_t ip, uint32_t prefixLen, struct MaoMpls * MaoMplsTunnel) {
-    
+
 }
 
 struct MaoMpls *

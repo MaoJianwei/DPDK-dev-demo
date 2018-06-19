@@ -41,8 +41,14 @@ include $(RTE_SDK)/mk/rte.vars.mk
 # binary name
 APP = mao-sr-fwd
 
+VPATH += $(SRCDIR)/SegmentRouting
+VPATH += $(SRCDIR)/IpSrTunnel
+
+
 # all source are stored in SRCS-y
 SRCS-y := main.c
+SRCS-y += MaoIpRouteTableLPM.c
+SRCS-y += mplsForwardTable.c
 
 CFLAGS += -O3
 CFLAGS += $(WERROR_FLAGS)

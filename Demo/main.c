@@ -7,10 +7,10 @@
 #include <rte_malloc.h>
 #include <rte_lpm.h>
 
-#include "portConfigure.h"
-#include "portLcoreBinding.h"
-#include "MaoConstant.h"
-
+#include "RouterParam/MaoConstant.h"
+#include "RouterParam/PortConfigure.h"
+#include "RouterParam/PortLcoreBinding.h"
+#include "RouterParam/TableConfigure.h"
 
 //TODO
 #include "IpSrTunnel/MaoMplsTunnel.h"
@@ -24,7 +24,6 @@ struct rte_mempool * rxMbufPool;
 struct rte_eth_dev_tx_buffer * txBuffers[Mao_MAX_ETHPORTS];
 
 struct PortLcoreBinding portLcoreBinding[Mao_MAX_LCORE];
-
 
 
 
@@ -91,13 +90,18 @@ sys_signal_process(int signal) {
 }
 
 static void
-setup_ip_tunnel_table (void) {
+setup_ip_tunnel_table(void) {
 //    rte_lpm_config
 
 //    rte_lpm_create("ip-tunnel-mapping-table", rte_socket_id(),)
 
+
 }
 
+static void
+setup_mpls_forwarding_table(void) {
+
+}
 
 int
 main(int argc, char ** argv) {
@@ -201,6 +205,8 @@ main(int argc, char ** argv) {
 
     // setup LPM
     setup_ip_tunnel_table();
+    setup_mpls_forwarding_table();
+
 
 
 

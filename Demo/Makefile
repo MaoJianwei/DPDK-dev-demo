@@ -43,6 +43,7 @@ APP = mao-sr-fwd
 
 VPATH += $(SRCDIR)/SegmentRouting
 VPATH += $(SRCDIR)/IpSrTunnel
+VPATH += $(SRCDIR)/RouterParam
 
 
 # all source are stored in SRCS-y

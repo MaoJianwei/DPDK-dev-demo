@@ -26,6 +26,9 @@
 
 
 
+#define Mao_IPTABLE_MAX_RULES 10000
+#define Mao_IPTABLE_NB_TBL8 256
+#define Mao_IPTABLE_ALIGN 4 //TODO - check
 
 
 

@@ -52,3 +52,9 @@ Mkfile.old
 dkms.conf
 build/
 
+
+
+# Mao
+.idea/
+cmake-build-debug/
+

@@ -4,12 +4,12 @@
 
 #include <stdint.h>
 #include <rte_malloc.h>
-#include <RouterParam/TableConfigure.h>
 #include <rte_lpm.h>
 #include <stdbool.h>
 
 #include "MaoIpRouteTableLPM.h"
 #include "RouterParam/MaoConstant.h"
+#include "RouterParam/TableConfigure.h"
 
 
 // not Thread-Security

@@ -17,6 +17,7 @@
 #include "IpSrTunnel/MaoIpRouteTableLPM.h"
 #include "SegmentRouting/mplsForwardTable.h"
 
+#define RTE_LOGTYPE_MAO RTE_LOGTYPE_USER1
 
 
 struct rte_mempool * rxMbufPool;
@@ -128,10 +129,12 @@ main(int argc, char ** argv) {
 
 
 
-    unsigned portCount = rte_eth_dev_count();
+    unsigned portCount = rte_eth_dev_count_avail();
     if (portCount > Mao_MAX_LCORE * Mao_MAX_PORT_PER_LCORE ||
         portCount > Mao_MAX_ETHPORTS)
         rte_exit(EXIT_FAILURE, "Fail: can not support so many ports with so few CPUs\n");
+
+    RTE_LOG(INFO, Mao, "Port Count: %d\n", portCount);
 
 
     // assign Eth dev to lcore
@@ -215,7 +218,7 @@ main(int argc, char ** argv) {
 
     MaoNeedExit = false;
 
-    rte_eal_mp_remote_launch(process_loop, NULL, CALL_MASTER);
+    rte_eal_mp_remote_launch(process_loop, NULL, CALL_MAIN);
 
     ret = 0;
     unsigned lcoreId;
@@ -246,7 +249,7 @@ main(int argc, char ** argv) {
         }
     }
 
-    RTE_LOG(INFO, Mao, "Good day! Return: %d\n", ret);
+    RTE_LOG(INFO, MAO, "Good day! Return: %d\n", ret);
 
     return ret;
 }

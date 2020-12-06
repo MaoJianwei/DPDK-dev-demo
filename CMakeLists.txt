@@ -13,5 +13,5 @@ add_executable(DPDK_dev_demo
         Demo/SegmentRouting/mplsForwardTable.c
         Demo/SegmentRouting/mplsForwardTable.h
         Demo/RouterParam/PortConfigure.h
-        Demo/RouterParam/PortLcoreBinding.h
-        dpdk-example/main.c)
+        Demo/RouterParam/PortLcoreBinding.h)
+        # dpdk-example/main.c)

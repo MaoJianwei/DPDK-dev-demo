@@ -7,7 +7,7 @@
 
 struct rte_eth_conf portConfigure = {
         .rxmode = {
-                .offloads = DEV_RX_OFFLOAD_CRC_STRIP | DEV_RX_OFFLOAD_CHECKSUM
+                .offloads = DEV_RX_OFFLOAD_CHECKSUM // DEV_RX_OFFLOAD_CRC_STRIP | DEV_RX_OFFLOAD_CHECKSUM
         },
         .txmode = {
                 .mq_mode = ETH_MQ_TX_NONE,

@@ -17,7 +17,7 @@
 
 struct MaoMplsLabelNode {
     uint32_t label;
-    MaoMplsLabelNode * nextLabel;
+    struct MaoMplsLabelNode * nextLabel;
 } __rte_cache_aligned;
 
 
